@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+	<title>Rick and Morty</title>
+	<link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<ul class="menu">
+		<li><a href="#about">About</a></li>
+		<li><a href="#favs">Characters</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>
+
+	<header>
+		<img class="logo" src="images/Rick_and_Morty_logo.png">
+	</header>
+
+	<section id="about">
+		<h1>About the Show</h1>
+
+		<img class="profile" src="images/1_974efe90-6b8e-4185-a177-89e1fbd68b3f_large.png">
+
+		<p>After going missing for nearly 20 years, Rick Sanchez suddenly arrives at his daughter Beth’s doorstep looking to move in with her and her family. Beth welcomes him with open arms, but her unremarkable husband Jerry isn’t too thrilled about the tearful reunion as Rick’s arrival serves to shake things up quite a bit around the household. Rick converts the garage into his personal laboratory and gets to work on all sorts of dangerous sci-fi gadgets and contraptions. That wouldn’t be so bad if not for the fact that Rick continues to involve his grandchildren Morty and Summer in his insane adventures.</p>
+		<p>With the exception of the Pilot episode, each episode ends with a post-credits scene.</p>
+	</section>
+
+	<section id="favs">
+		<h1>Characters</h1>
+		<img class="fav" src="images/Rick_Sanchez.png" alt="rick">
+		<img class="fav" src="images/Morty.jpg" alt="morty">
+		<img class="fav" src="images/Jerry_Smith.png" alt="jerry">
+
+		<div class="flexslider">
+  <ul class="slides">
+    <li><img src="images/thumb-1920-642540.png"></li>
+    <li><img src="images/thumb-1920-633294.png"></li>
+    <li><img src="images/thumb-1920-633222.jpg"></li>
+    <li><img src="images/thumb-1920-633160.jpg"></li>
+  </ul>
+</div>
+	</section>
+
+	<section id="contact">
+		<h1>Contact Me</h1>
+		<a href="http://twitter.com/llcodedotcom"><img src="images/twitter.png"></a>
+		<a href="http://www.facebook.com/ladieslearningcode"><img src="images/facebook.png"></a>
+		<a href="http://www.linkedin.com/company/ladies-learning-code"><img src="images/linkedin.png"></a>
+	</section>
+
+	<!-- ADD JQUERY HERE -->
+
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<script src="js/jquery-1.12.0.min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script>
+		$(document).ready( function(){
+  		// all jQuery code here
+			$(".fav").click( function(){
+				//console.log ("It works!!");
+				$(this).hide(1000).show(2000);
+			});
+			$(".menu a").click( function(){
+				//console.log ("It works!!");
+				$(".active").removeClass("active"); // remove the class from any menu link
+    		$(this).addClass("active"); // add the class to the specific menu link that is clicked
+			});
+			$('.flexslider').flexslider({
+				animation : "slide",
+				animationSpeed: 2000
+			});
+			$(function() {
+  			$('a[href*="#"]:not([href="#"])').click(function() {
+    		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    		&& location.hostname == this.hostname) {
+      		var target = $(this.hash);
+      		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      		if (target.length) {
+        		$('html, body').animate({
+          		scrollTop: target.offset().top
+        	}, 1000);
+        return false;
+      	}
+    	}
+  	});
+	});
+		});
+		</script>
+
+</body>
+</html>
